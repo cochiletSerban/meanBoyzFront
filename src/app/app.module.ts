@@ -7,11 +7,13 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { SearchBarComponent } from './mainPage/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
