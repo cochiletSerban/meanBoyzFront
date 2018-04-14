@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -15,6 +15,12 @@ import { HttpModule } from '@angular/http';
 import { NavBarComponent } from './mainPage/nav-bar/nav-bar.component';
 import { QueryParamsService } from './services/query-params.service';
 
+import { CommonModule } from '@angular/common';
+
+import { AgmCoreModule } from '@agm/core';
+import { MapComponent } from './map/map.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +29,7 @@ import { QueryParamsService } from './services/query-params.service';
     ResultsComponent,
     MainpageComponent,
     NavBarComponent,
+    MapComponent
     
   ],
   imports: [
@@ -31,7 +38,11 @@ import { QueryParamsService } from './services/query-params.service';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
-    FormsModule
+    FormsModule,
+    CommonModule,
+    AgmCoreModule.forRoot({
+      apiKey : 'AIzaSyCEywTsRa0eVB96afgSKg2_ceHtfgvlD3o'
+    })
   ],
   providers: [SearchService,QueryParamsService],
   bootstrap: [AppComponent]

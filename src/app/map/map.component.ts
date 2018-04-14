@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-
-import { QueryParamsService } from '../../services/query-params.service';
-import { SearchService } from '../../services/search.service';
+import { SearchService } from '../services/search.service';
+import { QueryParamsService } from '../services/query-params.service';
 
 @Component({
-  selector: 'app-results',
-  templateUrl: './results.component.html',
-  styleUrls: ['./results.component.css']
+  selector: 'app-map',
+  templateUrl: './map.component.html',
+  styleUrls: ['./map.component.css']
 })
-export class ResultsComponent implements OnInit {
+export class MapComponent implements OnInit {
+  title: string = 'My first AGM project';
+  lat: number = 51.678418;
+  lng: number = 7.809007;
+  zoom = 12;
+  results =[ {location:[44.43,26.1]}];
   constructor(private search:SearchService,private queryParams:QueryParamsService) { 
     queryParams.statusUpdated.subscribe( 
       (query) =>{
@@ -16,10 +20,10 @@ export class ResultsComponent implements OnInit {
       } 
     )
   }
-  results;
+
   
   renderResults(q){
-
+  
     console.log(q);
     
    this.search.getResults(q).subscribe(resp => {
@@ -27,7 +31,8 @@ export class ResultsComponent implements OnInit {
       //resp.json;
      // JSON.parse(resp)
      this.results = resp;
-      //console.log(resp);
+      console.log(resp);
+      this.zoom = 15;
      
     
    })
@@ -35,5 +40,6 @@ export class ResultsComponent implements OnInit {
   }
   ngOnInit() {
   }
+
 
 }

@@ -1,9 +1,32 @@
 
+
+  <form class="container">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Type a location" name="search" [(ngModel)]='query'>
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="button" (click) = "passQuery()">
+            <i class="glyphicon glyphicon-search"></i></button>
+        </div>
+    </div>
+  </form>
 <div class="container">
+<div class="containerpl">
   <form>
-   <div class="input-group">
-   <input type="text" class="form-control" placeholder="Search" name="search" [(ngModel)]='query'>
-   <div class="input-group-btn">
-   <button class="btn btn-default" type="button" (click) = "passQuery()">
-   <i class="glyphicon glyphicon-search"></i></button>
+    <label class="radio-inline">
+      <input type="checkbox" name="optradio" [(ngModel)]="Restaurants">Restaurants
+    </label>
+    <label class="radio-inline" >
+      <input type="checkbox" name="optradio" [(ngModel)]="Bar">Bar
+    </label>
+    <label class="radio-inline">
+        <input type="checkbox" name="optradio" [(ngModel)]="Hotel">Hotel
+    </label>
+    <label class="radio-inline">
+        <input type="checkbox" name="optradio" [(ngModel)]="Museum">Museum
+    </label>
+    <label class="radio-inline">
+        <input type="checkbox" name="optradio" [(ngModel)]="Establishments">Establishments
+    </label>
+</form>
+</div>
 </div>

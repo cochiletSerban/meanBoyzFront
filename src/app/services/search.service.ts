@@ -9,7 +9,7 @@ export class SearchService {
   getResults(query){
 
     return this.http.post(this.url,query).map(res => res.json());
-  
+    
   
   }
 }
