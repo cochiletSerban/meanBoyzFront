@@ -13,6 +13,7 @@ import { MainpageComponent } from './mainPage/mainpage/mainpage.component';
 import { SearchService } from './services/search.service';
 import { PlacesService } from './services/places.service';
 import { HttpModule } from '@angular/http';
+import { NavBarComponent } from './mainPage/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpModule } from '@angular/http';
     LoginComponent,
     SearchBarComponent,
     ResultsComponent,
-    MainpageComponent
+    MainpageComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
