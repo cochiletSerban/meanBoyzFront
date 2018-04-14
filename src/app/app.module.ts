@@ -8,20 +8,28 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SearchBarComponent } from './mainPage/search-bar/search-bar.component';
+import { ResultsComponent } from './mainPage/results/results.component';
+import { MainpageComponent } from './mainPage/mainpage/mainpage.component';
+import { SearchService } from './services/search.service';
+import { PlacesService } from './services/places.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    ResultsComponent,
+    MainpageComponent
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
   ],
-  providers: [],
+  providers: [SearchService,PlacesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
