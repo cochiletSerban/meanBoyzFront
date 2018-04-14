@@ -7,7 +7,9 @@ export class SearchService {
   constructor(private http: Http) { }
 
   getResults(query){
-    return this.http.post(this.url,query).map(resp => resp.json());
 
+    return this.http.post(this.url,query).map(res => res.json());
+  
+  
   }
 }

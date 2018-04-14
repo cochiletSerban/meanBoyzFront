@@ -3,6 +3,7 @@ body{
    }
    .container{
     margin-top: 1px;
+    margin-bottom: 20px;
    }
    .glyphicon-search{
     font-size: 20px;

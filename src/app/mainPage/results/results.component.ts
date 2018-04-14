@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PlacesService } from '../../services/places.service';
+
+import { QueryParamsService } from '../../services/query-params.service';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-results',
@@ -7,17 +9,34 @@ import { PlacesService } from '../../services/places.service';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-  constructor(private places: PlacesService) { }
-  results = [];
-  renderResults(){
-    let query= {
+  constructor(private search:SearchService,private queryParams:QueryParamsService) { 
+    queryParams.statusUpdated.subscribe( 
+      (query) =>{
+        this.renderResults(query);
+      } 
+    )
+  }
+  results;
+  
+  renderResults(q){
+      let query= {
       tip : true,
-      address: "bucuresti",
-      types:'restaurant',
+      address:q.address,
+      types:'point_of_interest',
       radius:'500',
-      name:'pub'
+      name:'muzeu'
     }
-    this.results = this.places.updateResults(query);
+    console.log(q);
+    
+   this.search.getResults(query).subscribe(resp => {
+     // console.log("new");
+      //resp.json;
+     // JSON.parse(resp)
+     this.results = resp;
+      console.log(resp);
+     
+    
+   })
     
   }
   ngOnInit() {
