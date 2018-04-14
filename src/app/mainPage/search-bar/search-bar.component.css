@@ -1,0 +1,23 @@
+body{
+    background: #202a3f;
+   }
+   .container{
+    margin-top: 200px;
+   }
+   .glyphicon-search{
+    font-size: 20px;
+   }
+   /*
+   .glyphicon-usd{
+       font-size : 20px;
+   }
+   */
+   .btn-default{
+    background: orange;
+    width: 100px;
+    padding: 12.5px;
+   }
+   .form-control{
+    padding: 25px;
+    font-size: 20px;
+   }
