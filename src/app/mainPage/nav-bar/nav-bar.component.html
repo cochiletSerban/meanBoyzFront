@@ -3,20 +3,20 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="#">MeanBoys</a>
     </div>
-    <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav ">
       <li><a href="#">Agenda</a></li>
-      <li><a href="#">Login</a></li>
+      <li (click)="lome()"><a href="#">Login</a></li>
     </ul>
 
 
 
 
 
-    
-    <ul  class= "nav navbar-nav navbar-right" *ngIf="done" >
+
+    <ul  id = "myNavbar" class= "nav navbar-nav navbar-right collapse navbar-collapse" *ngIf="done" >
       <li> <a href="#"   >today:    {{days[0]}} °C</a></li>
-      <li> <a href="#"  title="{{days[1].summary}}" >tomorrow: {{days[1].temperatureHigh}} °C</a></li>
-      <li> <a href="#"  title="{{days[2].summary}}" >3rd day   {{days[2].temperatureHigh}} °C</a></li>
+      <li class = "collapse"> <a href="#"  title="{{days[1].summary}}" >tomorrow: {{days[1].temperatureHigh}} °C</a></li>
+      <li class = "collapse"> <a href="#"  title="{{days[2].summary}}"  >3rd day   {{days[2].temperatureHigh}} °C</a></li>
     </ul>
   </div>
 </nav>

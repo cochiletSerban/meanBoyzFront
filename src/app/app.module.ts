@@ -3,7 +3,7 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -39,6 +39,7 @@ import { MapComponent } from './map/map.component';
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
     FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     AgmCoreModule.forRoot({
       apiKey : 'AIzaSyCEywTsRa0eVB96afgSKg2_ceHtfgvlD3o'

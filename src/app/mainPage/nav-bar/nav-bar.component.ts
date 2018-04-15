@@ -10,7 +10,9 @@ import { QueryParamsService } from '../../services/query-params.service';
 export class NavBarComponent implements OnInit {
   done = false;
   days=[];
+  log = false;
   constructor(private getW:SearchService,private qu : QueryParamsService) { 
+
     qu.statusUpdated.subscribe((q)=>{
       getW.getW(q).subscribe((res)=>{
           this.days[0]=res.temperature.substring(21, res.temperature.len);
@@ -20,12 +22,15 @@ export class NavBarComponent implements OnInit {
           this.done = true;
       })
     })
- 
   }
+ lome(){
+
+   this.getW.log.emit(this.log);
+   this.log=!this.log;
+ }
 
 
-
-  ngOnInit() { 
+  ngOnInit() {
   }
 
 }

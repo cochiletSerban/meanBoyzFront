@@ -1,9 +1,11 @@
 .this{
-    background-image: url("https://i.ytimg.com/vi/-4GkwSMuBKs/maxresdefault.jpg");
-    min-height: 600px;
+    background-image: url("https://orig00.deviantart.net/0c07/f/2016/049/0/f/firewatch___blue_skies_blue_mountains__by_nitromonteiro-d9s7kn0.jpg");
+    height: 100vh;
+    overflow: auto;
 }
  .wrapper{
-    background-color: rgba(0,0,0,0.5);
-    min-height: 600px;
+    background-color: rgba(0,0,0,0.2);
+    height:100vh;
     color: white;
-} 
+    overflow: auto;
+}

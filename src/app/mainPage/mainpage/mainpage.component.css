@@ -1,0 +1,20 @@
+.noNo
+{
+    display:none;
+}
+.yesYes
+{
+    display:block;  
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 5%;
+    background-color: #f8f8f8;
+    color: white;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}

@@ -32,7 +32,7 @@ export class MapComponent implements OnInit {
      // JSON.parse(resp)
      this.results = resp;
       console.log(resp);
-      this.zoom = 15;
+      this.zoom = 14;
      
     
    })

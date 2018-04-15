@@ -1,17 +1,53 @@
+
 <app-nav-bar></app-nav-bar>
-  <div class="container">
+<div class="main" *ngIf="log">
 
-    <div class="row">
-
-        <app-search-bar></app-search-bar>
-        <div class="col-md-4">
-            <app-results></app-results>
-        </div>
-        <div class="col-md-8">
-            <app-map ></app-map>
-        </div>
-        
+<div class="container">
+    <div class="row" >
+        <app-search-bar ></app-search-bar>
+        <div class="{{colApp}}" >
+                <app-results></app-results>
+            </div>
+            <div class="{{colMap}}">
+                <app-map ></app-map>
+            </div>
     </div>
 
   </div>
-  
+  <div class="footer">
+         
+
+<div class="btn-group ">
+        <div class="btn-group dropup" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+          <li class="dropdown" dropdown>
+            <a href="#" class="dropdown-toggle"  dropdownToggle data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> From <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="dropdown-item">Euro</a></li>
+              <li><a href="#"  class="dropdown-item">Dollar</a></li>
+              <li><a href="#" class="dropdown-item">Leu</a></li>
+              <li><a href="#"  class="dropdown-item">British Pound</a></li>
+            </ul>
+          </li>
+          <input type="text" class="form-control" id="m1" placeholder="Insert money" name="m1">
+        </div>
+        <div class="btn-group dropup" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+          <li class="dropdown" dropdown>
+            <a href="#" class="dropdown-toggle"  dropdownToggle data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> To <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="dropdown-item">Euro</a></li>
+              <li><a href="#"  class="dropdown-item">Dollar</a></li>
+              <li><a href="#" class="dropdown-item">Leu</a></li>
+              <li><a href="#"  class="dropdown-item">British Pound</a></li>
+            </ul>
+          </li>
+          <input type="text" class="form-control" id="m2" placeholder="Get Money" readonly name="m2">
+       </div>
+    </div>
+   </div>
+
+
+
+
+  </div>
+
+  <app-login *ngIf="!log"></app-login>

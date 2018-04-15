@@ -34,7 +34,7 @@ export class SearchBarComponent implements OnInit {
       tip : true,
       address:this.query,
       types:name,
-      radius:'500',
+      radius:'1000',
       name:this.query +" " +name
     }
 
